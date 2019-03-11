@@ -14,7 +14,7 @@
         android:id="@+id/send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send" />
+        android:text="發送到裝置" />
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="100sp"
@@ -25,15 +25,16 @@
         android:id="@+id/readBuffer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp" />
+        android:textSize="25sp"
+        android:background="@drawable/textview_border"/>
 </ScrollView>
 
 
     <TextView
         android:id="@+id/bluetoothStatus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp" />
+        android:layout_height="35sp"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/scan"
