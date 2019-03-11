@@ -104,19 +104,22 @@ public class MainActivity extends AppCompatActivity {
                 if(msg.what == MESSAGE_READ){ //收到MESSAGE_READ 開始接收資料
                     String readMessage = null;
                     try {
-                        //readMessage = new String((byte[]) msg.obj,"UTF-8");
+                        readMessage = new String((byte[]) msg.obj,"UTF-8");
+                        readMessage=readMessage.trim();
+                        readMessage+="\n";
                         //readMessage =  readMessage.substring(0,1);
                         //取得傳過來字串的第一個字元，其餘為雜訊
-                        //_recieveData += readMessage; //拼湊每次收到的字元成字串
+                        _recieveData += readMessage; //拼湊每次收到的字元成字串
 
-
-                        byte[] data = (byte[])msg.obj;
-                        readMessage = new String(data,"UTF-8");
-                        System.out.println(readMessage);
-//                        for(int i = 0 ; i< data.length ; i++){
-//                            System.out.print(data[i] + ",");
-//                        }
-//                        System.out.println();
+//                      //Test
+//                        byte[] data = (byte[])msg.obj;
+//                        readMessage = new String(data,"UTF-8");
+//                        readMessage=readMessage.trim();
+//                        System.out.println(readMessage);
+////                        for(int i = 0 ; i< data.length ; i++){
+////                            System.out.print(data[i] + ",");
+////                        }
+////                        System.out.println();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
