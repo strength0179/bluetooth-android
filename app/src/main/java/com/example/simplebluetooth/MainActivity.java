@@ -157,10 +157,16 @@ public class MainActivity extends AppCompatActivity {
                 //當按下send開始傳輸資料
                 @Override
                 public void onClick(View v){
-                    _recieveData = ""; //清除上次收到的資料
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write(inputdata.getText().toString());
+                    new Thread(
+                        new Runnable(){
+                            public void run(){
+                                _recieveData = ""; //清除上次收到的資料
+                                if(mConnectedThread != null) //First check to make sure thread created
+                                    mConnectedThread.write(inputdata.getText().toString());
                     //傳送將輸入的資料出去
+                        }
+                    ).start();
+                    
                 }
             });
 
